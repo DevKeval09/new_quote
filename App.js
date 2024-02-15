@@ -6,6 +6,8 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import TabNavigation from "./app/Navigations/TabNavigation";
 import { registerRootComponent } from 'expo';
+import { useFonts } from 'expo-font';
+
 
 export default function App() {
   const [fontsLoaded] = useFonts({
