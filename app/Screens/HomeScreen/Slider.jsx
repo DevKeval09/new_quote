@@ -1,54 +1,49 @@
-import { View,Image, Text, StyleSheet, FlatList } from "react-native";
-import React, { useEffect, useState } from "react";
-import GlobalApi from "../../Utils/GlobalApi";
-import Heading from "../../Components/Heading";
+import { View, Text,StyleSheet, FlatList,Image } from 'react-native'
+import React, {useEffect, useState} from 'react'
+import GlobalApi from '../../Utils/GlobalApi'
 
-export default function Slider() {
-  const [slider, setSlider] = useState([]);
-  useEffect(() => {
-    getSliders();
-  }, []);
+      export default function Slider() {
+        const[Slider,setSlider]=useState([]);
+        useEffect(()=>{
+            getsliders();
+        },[])
+        const getsliders=()=>{
+          GlobalApi.getSlider().then(resp=>{
+            console.log("resp",resp.sliders);
+            setSlider(resp?.sliders);
+          })
+        }
 
-  const getSliders = () => {
-    GlobalApi.getslider().then((resp) => {
-      console.log("resp", resp.sliders);
-      setSlider(resp?.sliders);
-    });
-  };
-  return (
-    <View>
-      <Heading text={'Offers For You'}/>
-      <FlatList
-        data={slider}
-        horizontal={true}
-        showsHorizontalScrollIndicator={false}
+    return (
+      <View>
+        <Text style={styles.heading}>Offers For You</Text>
+        <FlatList 
+          data={Slider}
+          horizontal='true'
+          renderItem={({item ,index })=>(
+            <View>
+              <Text>
+              {item.name}</Text>
+              <Image  source={{uri:item?.Image?.url}} 
+                style={{height:150,width:280,borderRadius:10}}
+              />
+            </View>
 
-        renderItem={({item,index})=>(
-          <View style={{marginRight:20}}>
-          <Image source={{uri:item?.image?.url}} 
-            style={styles.sliderImage}
-          />
-          </View>
-        )}
-      />
-      <View style={{paddingTop:10, paddingRight:-10}}>
-      <Text
-        style={{ color: "black", fontSize: 27, fontFamily: "Outfit-medium" }}>
-        Categories
-      </Text>
+          )}
+        
+        
+        />
       </View>
-    </View>
-  );
+  )
 }
-
 const styles = StyleSheet.create({
   heading: {
-    color: "black", fontSize: 27, fontFamily: "Outfit-medium" 
+    fontSize :20 ,
   },
   sliderImage:{
-    width:230,
-    height:170,
+    height:150,
+    width:270,
     borderRadius:20,
-    objectFit:'contain',
-  }
-});
+    objectFit:'contain' ,
+  },
+})
