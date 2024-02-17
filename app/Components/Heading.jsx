@@ -1,24 +1,26 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text,StyleSheet } from 'react-native'
 import React from 'react'
 
 export default function Heading({text,isViewAll=false}) {
-return (
+  return (
     <View style={styles.container}>
-    <Text style={styles.heading}> {text}</Text>
-    {isViewAll&& <Text style={{paddingBottom:10}}> View All    </Text>}
+        <Text style={styles.heading}>
+            {text}
+        </Text>
+        {isViewAll&& <Text> View All </Text>}
     </View>
-)
+  )
 }
-const styles = StyleSheet.create({
+const styles =StyleSheet.create({
+    heading: {
+      fontSize :20,
+      fontFamily:'Outfit-medium',
+      marginBottom:10
+    },
     container:{
         display:'flex',
         flexDirection:'row',
-        justifyContent:'space-between',
-        alignItems:'center'
-    },
-    heading: {
-    color: "black", 
-    fontSize: 27, 
-    fontFamily:"Outfit-medium"
-    },
+        // alignItems:'center',
+        justifyContent:'space-between'
+    }
 });
