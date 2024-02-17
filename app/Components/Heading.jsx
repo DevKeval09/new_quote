@@ -13,7 +13,7 @@ export default function Heading({text,isViewAll=false}) {
 }
 const styles =StyleSheet.create({
     heading: {
-      fontSize :20,
+      fontSize :25,
       fontFamily:'Outfit-medium',
       marginBottom:10
     },

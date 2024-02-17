@@ -21,12 +21,12 @@ const result= await request(MASTER_URL, query);
 }
 
 const getcategories=async()=>{
-        const query=gql`
-        query GetCategory {
-            categories {
-            id
-            name
-            icon {
+        const query=gql`    
+            query GetCategory {
+                categories {
+                id
+                name
+                icon {
                 url
             }
             }

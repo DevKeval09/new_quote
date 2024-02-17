@@ -8,6 +8,7 @@ import Heading from '../../Components/Heading';
         useEffect(()=>{
             getsliders();
         },[])
+
         const getsliders=()=>{
           GlobalApi.getSlider().then(resp=>{
             console.log("resp",resp.sliders);
