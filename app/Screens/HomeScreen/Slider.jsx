@@ -32,7 +32,7 @@ import Heading from '../../Components/Heading';
           )}
         />
       </View>
-  )
+    )
 }
 const styles = StyleSheet.create({
   heading: {

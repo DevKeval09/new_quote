@@ -5,12 +5,11 @@ import Slider from './Slider'
 import Categories from './Categories'
 import { useFonts } from 'expo-font';
 
-
 export default function HomeScreen() {
   return (
-    <View style={{paddingTop:40, marginLeft:15,}}>
+    <View style={{paddingTop:40, marginLeft:20,}}>
     {/* Header Section */}
-      <Header/>
+      <Header/> 
       <View style={{padding:20,}}>
     {/* Slider Section */}
       <Slider/>

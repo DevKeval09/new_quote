@@ -46,6 +46,7 @@ const styles = StyleSheet.create({
         alignItems:'center',
         justifyContent:'space-between',
         marginRight:10,
+        paddingLeft:10,
     },
     Searchbtn:{
         backgroundColor:Colors.WHITE,
