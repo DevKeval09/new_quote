@@ -5,7 +5,6 @@ import { useWarmUpBrowser } from "../../hooks/warmUpBrowser";
 import { useOAuth } from "@clerk/clerk-expo";
 import * as WebBrowser from 'expo-web-browser';
 
-
 WebBrowser.maybeCompleteAuthSession();
 
 export default function Login() {
@@ -39,12 +38,10 @@ export default function Login() {
             </Text> Service
         </Text>
         <Text style={{fontSize:17,color:Colors.WHITE,textAlign:'center',marginTop:20}}> Best App To Find Services Near You Which Deliver You    a Professional Service!</Text>
-      
         <TouchableOpacity style={styles.buttons} 
         onPress={onPress}>
             <Text style={{textAlign:'center',color:Colors.primary,fontSize:17,}}>Let's Get Started</Text>
         </TouchableOpacity>
-      
       </View>
     </View>
   )

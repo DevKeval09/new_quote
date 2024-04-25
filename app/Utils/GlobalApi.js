@@ -4,7 +4,6 @@ import { request, gql } from 'graphql-request'
 const MASTER_URL="https://api-ap-south-1.hygraph.com/v2/clrwgall70ri301teg3i0050j/master"
 
 const getSlider=async()=>{
-
 const query = gql`
     query GetSlider {
         sliders {
@@ -32,10 +31,34 @@ const getcategories=async()=>{
             }
         }
     `
-        const result= await request(MASTER_URL, query);
+    const result= await request(MASTER_URL, query);
+    return result;
+}
+
+const getBusinessList=async()=>{
+    const query =gql`
+    query GetBusinessList {
+        businessLists {
+            id
+            name
+            email
+            contactPerson
+            category {
+                name
+            }
+        address
+        about
+        images {
+        url
+        }
+    }
+}
+    `
+    const result= await request(MASTER_URL, query);
     return result;
 }
 export default{
     getSlider,
-    getcategories
+    getcategories,
+    getBusinessList
 }

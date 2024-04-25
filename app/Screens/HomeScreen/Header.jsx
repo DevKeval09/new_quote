@@ -29,8 +29,7 @@ return user&&(
             size={24} color={Colors.primary} />
         </View>
     </View>
-)   
-}
+)   }
 const styles = StyleSheet.create({
     container:{
         padding:10,
